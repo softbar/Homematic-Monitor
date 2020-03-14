@@ -1,0 +1,380 @@
+{
+	"Information": "!!!!!! ACHTUNG !!!!! Die Reihenfolge der Elemente nicht ändern !!!!!!!",
+	"elements": [
+		{
+			"type": "ExpansionPanel",
+			"caption": "Module Configuration",
+			"name": "ModuleConfig",
+			"items": [
+				{
+					"type": "ExpansionPanel",
+					"caption": "Monitor Events",
+					"name": "Monitor Events",
+					"items": [
+						{
+							"type": "RowLayout",
+							"items": [
+								{
+									"type": "CheckBox",
+									"name": "LOWBAT_Monitor",
+									"caption": "Battery"
+								},
+								{
+									"type": "CheckBox",
+									"name": "UNREACH_Monitor",
+									"caption": "Reachable"
+								},
+								{
+									"type": "CheckBox",
+									"name": "ERROR_Monitor",
+									"caption": "Error"
+								},
+								{
+									"type": "CheckBox",
+									"name": "MOTION_Monitor",
+									"caption": "Motion"
+								},
+								{
+									"type": "CheckBox",
+									"name": "STATE_Monitor",
+									"caption": "Power"
+								},
+								{
+									"type": "CheckBox",
+									"name": "CONFIG_PENDING_Monitor",
+									"caption": "Config"
+								},
+								{
+									"type": "CheckBox",
+									"name": "UPDATE_PENDING_Monitor",
+									"caption": "Update"
+								}
+							]
+						},
+						{
+							"type": "Label",
+							"caption": "Event script assignment"
+						},
+						{
+							"type": "RowLayout",
+							"items": [
+								{
+									"type": "SelectScript",
+									"name": "GLOBAL_Script",
+									"caption": "All"
+								},
+								{
+									"type": "SelectScript",
+									"name": "LOWBAT_Script",
+									"caption": "Battery"
+								}
+							]
+						},
+						{
+							"type": "RowLayout",
+							"items": [
+								{
+									"type": "SelectScript",
+									"name": "UNREACH_Script",
+									"caption": "Reachable"
+								},
+								{
+									"type": "SelectScript",
+									"name": "ERROR_Script",
+									"caption": "Error"
+								}
+							]
+						},
+						{
+							"type": "RowLayout",
+							"items": [
+								{
+									"type": "SelectScript",
+									"name": "MOTION_Script",
+									"caption": "Motion"
+								},
+								{
+									"type": "SelectScript",
+									"name": "STATE_Script",
+									"caption": "Power"
+								}
+							]
+						},
+						{
+							"type": "RowLayout",
+							"items": [
+								{
+									"type": "SelectScript",
+									"name": "CONFIG_PENDING_Script",
+									"caption": "Config Pending"
+								},
+								{
+									"type": "SelectScript",
+									"name": "UPDATE_PENDING_Script",
+									"caption": "Update Pending"
+								}
+							]
+						},
+						{
+							"type": "RowLayout",
+							"items": [
+								{
+									"type": "Select",
+									"name": "MaxCallsPerEvent",
+									"caption": "Max calls per Event",
+									"options": [
+										{
+											"label": "allways",
+											"value": 0
+										},
+										{
+											"label": "1",
+											"value": 1
+										},
+										{
+											"label": "5",
+											"value": 5
+										},
+										{
+											"label": "10",
+											"value": 10
+										},
+										{
+											"label": "20",
+											"value": 20
+										},
+										{
+											"label": "50",
+											"value": 50
+										},
+										{
+											"label": "100",
+											"value": 100
+										}
+									]
+								},
+								{
+									"type": "Select",
+									"name": "RefreshRate",
+									"caption": "Frontend Refresh Rate",
+									"options": [
+										{
+											"label": "Moderat",
+											"value": 0
+										},
+										{
+											"label": "Allways",
+											"value": 1
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"type": "ExpansionPanel",
+					"caption": "Log Output",
+					"items": [
+						{
+							"type": "RowLayout",
+							"items": [
+								{
+									"type": "CheckBox",
+									"name": "Show_LastEvent",
+									"caption": "Last Event"
+								},
+								{
+									"type": "CheckBox",
+									"name": "Show_Log",
+									"caption": "Monitor"
+								},
+								{
+									"type": "CheckBox",
+									"name": "UseColorsInList",
+									"caption": "Colored Log"
+								}
+							]
+						},
+						{
+							"type": "RowLayout",
+							"items": [
+								{
+									"type": "Select",
+									"name": "LogSortBy",
+									"caption": "Sort log by",
+									"options": [
+										{
+											"label": "No Sort",
+											"value": ""
+										},
+										{
+											"label": "Address",
+											"value": "a"
+										},
+										{
+											"label": "Name",
+											"value": "n"
+										},
+										{
+											"label": "Last Event",
+											"value": "i"
+										}
+									]
+								},
+								{
+									"type": "NumberSpinner",
+									"name": "MaxLogEntrys",
+									"caption": "Max Log Entrys",
+									"width": "150px"
+								}
+							]
+						},
+						{
+							"type": "RowLayout",
+							"items": [
+								{
+									"type": "CheckBox",
+									"name": "LogErrorToMessageLog",
+									"caption": "Log Errors to IPS Message Log"
+								}
+							]
+						}
+					]
+				},
+				{
+					"type": "ExpansionPanel",
+					"caption": "Devicelist",
+					"items": [
+						{
+							"type": "RowLayout",
+							"items": [
+								{
+									"type": "NumberSpinner",
+									"name": "CleanUpDays",
+									"caption": "Remove inactive Devices after",
+									"suffix": "days"
+								}
+							]
+						},
+						{
+							"type": "CheckBox",
+							"name": "CleanUpOnlyNoError",
+							"caption": "Remove only if has no Errors"
+						},
+						{
+							"type": "CheckBox",
+							"name": "CleanUpStateOk",
+							"caption": "Delete immediately if there are no errors"
+						},
+						{
+							"type": "CheckBox",
+							"name": "LogErrorsOnly",
+							"caption": "Create new devices with error only"
+						},
+						{
+							"type": "CheckBox",
+							"name": "CheckCCUDevicesOnStartup",
+							"caption": "Check CCU errors on Startup"
+						}
+					]
+				}
+			]
+		}
+	],
+	"actions": [
+		{
+			"type": "List",
+			"name": "DeviceList",
+			"sort": {
+				"column": "i",
+				"direction": "descending"
+			},
+			"columns": [
+				{
+					"name": "a",
+					"caption": "Address",
+					"width": "120px"
+				},
+				{
+					"name": "n",
+					"caption": "Name",
+					"width": "auto"
+				},
+				{
+					"name": "ER",
+					"caption": "Error",
+					"width": "140px"
+				},
+				{
+					"name": "LO",
+					"caption": "Battery",
+					"width": "100px"
+				},
+				{
+					"name": "UN",
+					"caption": "Reachable",
+					"width": "100px"
+				},
+				{
+					"name": "MO",
+					"caption": "Motion",
+					"width": "100px"
+				},
+				{
+					"name": "ST",
+					"caption": "Power",
+					"width": "100px"
+				},
+				{
+					"name": "CO",
+					"caption": "Config",
+					"width": "100px"
+				},
+				{
+					"name": "UP",
+					"caption": "Update",
+					"width": "100px"
+				},
+				{
+					"name": "i",
+					"caption": "Last Event",
+					"width": "250px"
+				}
+			]
+		},
+		{
+			"type": "RowLayout",
+			"items": [
+				{
+					"type": "Button",
+					"caption": "Refresh Selected"
+				},
+				{
+					"type": "Button",
+					"caption": "Refresh All"
+				},
+				{
+					"type": "Button",
+					"caption": "Reset Selected"
+				},
+				{
+					"type": "Button",
+					"caption": "Reset All"
+				},
+				{
+					"type": "Button",
+					"caption": "Request Errors"
+				},
+				{
+					"type": "Button",
+					"caption": "Delete Selected"
+				},
+				{
+					"type": "Button",
+					"caption": "Delete All"
+				}
+			]
+		}
+	]
+}
